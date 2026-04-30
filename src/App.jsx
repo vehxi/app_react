@@ -7,14 +7,21 @@ function App() {
         content: '',
     })
 
+    const [posts, setPosts] = useState([])
+
+    const storePost = (e) => {
+        e.preventDefault();
+
+        setPosts([...posts, post])
+
+        console.log(posts)
+    }
     const handePost = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        console.log(e.target.name);
+        const name = e.target.name
+        const value = e.target.value
+        console.log(e.target.name)
 
-        setPost({...post, [name]: value });
-
-        console.log(post);
+        setPost({...post, [name]: value })
     }
 
     return (
@@ -37,6 +44,7 @@ function App() {
                 </div>
                 <div>
                     <a
+                        onClick={(e) => storePost(e)}
                         className="inline-block text-xs px-3 py-2 text-white bg-sky-600 border-sky-700"
                         href="#">STORE</a>
                 </div>
