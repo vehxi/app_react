@@ -1,11 +1,18 @@
+import {useState} from "react";
+
 function App() {
 
+    const [post, setPost] = useState({
+        title: '',
+        content: '',
+    })
 
     return (
         <div className="bg-gray-50 min-h-screen p-4">
             <div className="mb-4 w-1/2 mx-auto bg-white p-4 border border-gray-200">
                 <div className="mb-4">
                     <input
+                        onChange={}
                         placeholder="title"
                         type="text"
                         className="border border-gray-200 p-4 w-full"/>
